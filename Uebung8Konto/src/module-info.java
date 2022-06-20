@@ -1,0 +1,2 @@
+module uebung8Konto {
+}
