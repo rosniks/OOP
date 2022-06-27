@@ -1,0 +1,2 @@
+module uebung9Interfaces {
+}
