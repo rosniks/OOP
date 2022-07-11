@@ -2,17 +2,38 @@ package test;
 
 
 public class Felder {
+	public int y;
+	
+	Felder(int y){
+		this.y=y;
+	}
+	 
+	public void addieren(int x) throws ArithmeticException {
+		if(x+y < 0)
+			throw new ArithmeticException("Summer darf nicht kleiner null sein");
+		else
+			y=x+y;
+	}
+	
+	public String toString() {
+		return "y:" + y;
+	}
+	
+	
+	
+	
 	public static void main (String[] args) {
-		int[] feld;
-		
-		feld = new int[5]; //Feld mit 5 int-Werten
-		int[] feld2 = {1, 2, 3};
-		
-		for(int i = 0; i<feld2.length; i++) {
+		Felder tmp = new Felder(2);
+		try {tmp.addieren(-6);}
+		catch(ArithmeticException e) {
+			e.printStackTrace();
 		}
-		char c = 1;
-		System.out.println(-5 % 3 + c);
+		finally {System.out.println("geschafft");}
+		
+		System.out.println(tmp);
 		
 	}
-
 }
+		
+		
+		
